@@ -1,0 +1,451 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Formulario CESIM</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"/>
+
+        <!-- Libraries Stylesheet -->
+        <link href= {% static '/lib/animate/animate.min.css'%} rel="stylesheet" type="text/css"/>
+        <link href= {% static '/lib/owlcarousel/assets/owl.carousel.min.css'%} rel="stylesheet" type="text/css"/>
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href= {% static '/css/bootstrap.min.css'%} rel="stylesheet" type="text/css"/>
+
+        <!-- Template Stylesheet -->
+        <link href= {% static '/css/style.css'%} rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Cargando...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a href="" class="navbar-brand p-0">
+                        <h1 class="display-6 text-primary"><i class="fas fa-user-md me-3"></i></i>Formulario Médico</h1>
+                        <!-- <img src="img/logo.png" alt="Logo"> -->
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Carousel Start -->
+        <div class="header-carousel">
+            <img src="{% static "/img/3275630.webp" %}" style="position: absolute; height: 200rem;" class="img-fluid" alt="First slide"/>
+        <div style="padding: 8%;">
+            <div class="col-lg-6 fadeInLeft animated" data-animation="fadeInLeft" data-delay="1s" style="animation-delay: 1s;">
+                <div class="bg-secondary rounded p-5">
+                    <h4 class="text-white mb-4">Rellene los campos</h4>
+                    <!-- Formulario-->
+                    <form id ="formu" enctype = "multipart/form-data">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <span class="text-start text-white d-block mb-2">Datos Clinicos</span>                                                        
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name = "unidad" placeholder="Unidad" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name = "consultorio_medico_familia" placeholder="No. Consultorio Médico de la Familia" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name = "no_historia_clinica_individual" placeholder="No. Historia Clínica Individual en el CMF" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name ="no_historia_clinica_hospital_base" placeholder="No. Historia Clínica (hospital base)" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <span class="text-start text-white d-block mb-2">Datos Personales</span> 
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name = "nombre" placeholder="Nombre" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name = "primer_apellido" placeholder="1er Apellido" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name = "segundo_apellido" placeholder="2do Apellido" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="number" name = "edad" placeholder="Edad" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <select name = "sexo" class="form-select" aria-label="Default select example">
+                                    <option selected>Seleccione el sexo</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <select name ="color_piel" class="form-select" aria-label="Default select example">
+                                    <option selected>Seleccione el color de piel</option>
+                                    <option value="Blanca">Blanca</option>
+                                    <option value="Negra">Negra</option>
+                                    <option value="Mestiza">Mestiza</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name= "nacimiento" placeholder="Nacimiento(Lugar)" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+        
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-calendar-alt"></span><span class="ms-1">Fecha Nacimiento</span>
+                                    </div>
+                                    <input name="fecha_nacimiento" class="form-control" type="date">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name="residencia_habitual" placeholder="Resindencia Habitual" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name= "localidad" placeholder="Localidad" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name="apartamento" placeholder="Apartamento" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name="no_o_km" placeholder="No o Km" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name="edificio" placeholder="Edificio" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name="direccion_entre_calles" placeholder="Entre calles, bloque, zona, reparto" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name="provincia" placeholder="Provincia" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name ="municipio" placeholder="Municipio" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name="telefono" placeholder="Teléfono" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name="nombre_padre" placeholder="Nombre del padre" aria-label="Enter a City or Airport">
+                                    <select name="estado_vital_padre" class="form-select ms-3" aria-label="Default select example">
+                                        <option selected>Estado Vital</option>
+                                        <option value="Vivo">Vivo</option>
+                                        <option value="Muerto">Muerto</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name="nombre_madre" placeholder="Nombre de la madre" aria-label="Enter a City or Airport">
+                                    <select name="estado_vital_madre" class="form-select ms-3" aria-label="Default select example">
+                                        <option selected>Estado Vital</option>
+                                        <option value="Vivo">Vivo</option>
+                                        <option value="Muerto">Muerto</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <span class="text-start text-white d-block mb-2">Datos de diagnósticos</span> 
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name="referido_a_especialista_de" placeholder="Referido a especialista de ..." aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-calendar-alt"></span><span class="ms-1">Fecha/Hora del Turno</span>
+                                    </div>
+                                    <input name="fecha_turno_programado" class="form-control" type="date">
+                                    <input name="hora_turno_programado" style="margin-left:1%;" class="form-control" type="time">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <textarea class="form-control" type="text" style="resize: none;" rows="3" name="antecedentes_interes" placeholder="Antecedentes de interés" aria-label="Enter a City or Airport"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <textarea class="form-control" type="text" style="resize: none;" rows="3" name="resumen_sindromico" placeholder="Resumen sindrómico" aria-label="Enter a City or Airport"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <textarea class="form-control" type="text" style="resize: none;" rows="3" name="resumen_examen_fisico" placeholder="Resumen físico" aria-label="Enter a City or Airport"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <textarea class="form-control" type="text" style="resize: none;" rows="3" name="tratamiento" placeholder="Tratamiento" aria-label="Enter a City or Airport"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <textarea class="form-control" type="text" style="resize: none;" rows="3" name="evolucion" placeholder="Evolución" aria-label="Enter a City or Airport"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <textarea class="form-control" type="text" style="resize: none;" rows="3" name="impresion_diagnostica" placeholder="Impresión diagnóstica" aria-label="Enter a City or Airport"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <textarea class="form-control" type="text" style="resize: none;" rows="3" name="otros_diagnosticos" placeholder="Otros diagnosticos" aria-label="Enter a City or Airport"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <span class="text-start text-white d-block mb-2">Datos del Médico</span>   
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name="nombre_medico" placeholder="Nombre del Médico" aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12"> 
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                    </div>
+                                    <input class="form-control" type="text" name="referido_a" placeholder="Referido a..." aria-label="Enter a City or Airport">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-map-marker-alt"></span><span class="ms-1">Firma</span>
+                                    </div>
+                                    <input id="fileinput" name="firma_medico" class="form-control" type="file">
+                                </div>
+                                <span class="text-start text-warning d-block mb-2 mt-2">Arrastre su firma digital en formato .png</span>  
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                        <span class="fas fa-calendar-alt"></span><span class="ms-1">Fecha</span>
+                                    </div>
+                                    <input name="fecha" class="form-control" type="date">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <input type="submit" class="btn btn-light w-100 py-2">
+                            </div>
+                            <div id= "messageSuccess">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>  
+        </div>
+        <!-- Carousel End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer py-5 wow fadeIn position-relative" style="z-index: 1" data-wow-delay="0.2s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column"> 
+                            <div class="footer-item">
+                                <h4 class="text-white mb-4">Sobre mi</h4>
+                                <p class="mb-3">Hola soy Estudiante de informatica soy programador junior tengo conocimientos básicos de frontend pero me desempeño mejor en el trabajo de backend Python, Django, Rest-Django, me gustaría perfeccionar mis habilidades.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Información de contacto</h4>
+                            <a href="#"><i class="fa fa-map-marker-alt me-2"></i> Universidad de las Carretera de San Antonio de los Baños, Km 2 1/2, Torrens, Cuba</a>
+                            <a href="mailto:info@example.com"><i class="fas fa-envelope me-2"></i> ecpkiko2002@gmail.com</a>
+                            <a href="tel:+5353019770"><i class="fas fa-phone me-2"></i> +53 53019770</a>
+                            <div class="d-flex">
+                                <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.facebook.com/ernesto.carbonellpaz/"><i class="fab fa-facebook-f text-white"></i></a>
+                                <a class="btn btn-secondary btn-md-square rounded-circle me-3" href="https://www.instagram.com/nesty_lucifer69/"><i class="fab fa-instagram text-white"></i></a>
+                                <a class="btn btn-secondary btn-md-square rounded-circle me-0" href="https://www.linkedin.com/in/ernesto-carbonell-paz-06b05a25a/"><i class="fab fa-linkedin-in text-white"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Formulario Web</a>, Todos los Derechos Reservados.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-body">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Diseñado por <a class="border-bottom text-white" href="https://github.com/KaikoKill">Ernesto Carbonell Paz</a> Patrocinado por <a class="border-bottom text-white" href="https://www.facebook.com/universidad.uci">Universidad De las Ciencias Informáticas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src= {% static '/lib/wow/wow.min.js' %} ></script>
+    <script src= {% static '/lib/easing/easing.min.js' %} ></script>
+    <script src= {% static '/lib/waypoints/waypoints.min.js' %} ></script>
+    <script src= {% static '/lib/counterup/counterup.min.js' %} ></script>
+    <script src= {% static '/lib/owlcarousel/owl.carousel.min.js' %} ></script>
+    
+
+    <!-- Template Javascript -->
+    <script src= {% static '/js/main.js' %} ></script>
+    <script src= {% static '/js/formu.js' %} ></script>
+    </body>
+
+</html>

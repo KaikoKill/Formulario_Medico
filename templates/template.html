@@ -1,0 +1,298 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>Formulario de Revisión del Caso</title>
+</head>
+<body>
+    <table class="border border-dark mt-5 mx-auto">
+        <tbody>   
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="2" rowspan="2" width="183">
+        <p>Modelo 53-21-01</p>
+        <p>Ministerio de Salud Pública Hospitales y Policlínicos</p>
+        </td>
+        <td class="border border-dark" colspan="5" rowspan="2" width="398">
+        <p class="text-center"><strong><em>REMISIÓN DE</em></strong><strong><em> </em></strong><strong><em>CASO</em></strong></p>
+        </td>
+        <td class="border border-dark" colspan="11" width="356">
+        <p><strong>No.</strong><strong> </strong><strong>Consultorio Médico</strong><strong> </strong><strong>de</strong><strong> </strong><strong>la</strong><strong> </strong><strong>Familia: {{formulario.No_Consultorio_Medico_de_la_Familia}} </strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="11" width="356">
+        <p><strong>No</strong><strong>.</strong><strong> </strong><strong>Historia Clínica</strong><strong> </strong><strong>Individual en el CM</strong><strong>F: {{formulario.No_Historia_Clinica_Individual_en_el_CMF}}</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="7" width="581">
+        <p>UNIDAD: {{formulario.unidad}}</p>
+        </td>
+        <td class="border border-dark" colspan="11" width="356">
+        <p><strong>No</strong><strong>.</strong><strong> </strong><strong>Historia Clínica</strong><strong> </strong><strong>(</strong><strong>hospital</strong><strong> </strong><strong>base</strong><strong>): {{formulario.No_Historia_Clinica_Hospital_base}}</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="4" width="474">
+        <p><strong>Referido</strong><strong> </strong><strong>a: {{formulario.Referido_a}}</strong></p>
+        </td>
+        <td class="border border-dark" colspan="8" width="258">
+        <p><strong>FECHA</strong><strong> </strong><strong>DE</strong><strong> </strong><strong>TURNO</strong><strong> </strong><strong>PROGRAMADO</strong></p>
+        </td>
+        <td class="border border-dark" colspan="6" width="205">
+        <p><strong>HORA</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="4" width="474">
+        <p> </p>
+        </td>
+        <td class="border border-dark" colspan="2" width="85">
+        <p>Día: {{ formulario.Fecha_Programada.day }}</p>
+        </td>
+        <td class="border border-dark" colspan="2" width="85">
+        <p>Mes: {{ formulario.Fecha_Programada.month }}</p>
+        </td>
+        <td class="border border-dark" colspan="4" width="87">
+        <p>Año: {{ formulario.Fecha_Programada.year }}</p>
+        </td>
+        <td class="border border-dark" colspan="6" width="205">
+        <p>{{ formulario.Hora }} {{ formulario.ampm }}</p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" rowspan="8" width="62">
+        <p><strong>DATOS</strong></p>
+        <p><strong>GENERALES</strong></p>
+        </td>
+        <td class="border border-dark" colspan="2" width="259">
+        <p><strong>1</strong><strong>er</strong><strong> </strong><strong>Apellido</strong><strong>: {{formulario.Primer_Apellido}}</strong></p>
+        </td>
+        <td class="border border-dark" colspan="4" width="259">
+        <p><strong>2</strong><strong>do</strong><strong> </strong><strong>Apellido: {{formulario.Segundo_Apellido}}</strong></p>
+        </td>
+        <td class="border border-dark" colspan="11" width="356">
+        <p><strong>Nombre(s):{{formulario.Nombre_Paciente}}</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="2" width="259">
+        <p><strong>Sexo</strong><strong>:</strong><strong> </strong><strong> </strong>{{formulario.Genero}}</p>
+        </td>
+        <td class="border border-dark" colspan="4" width="259">
+        <p><strong>Edad</strong><strong> </strong>(años cumplidos): {{formulario.Edad}}</p>
+        </td>
+        <td class="border border-dark" colspan="11" width="356">
+        <p><strong>Color</strong><strong> </strong><strong>de la piel: </strong><strong> </strong>{{formulario.Raza}}</p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="6" width="519">
+        <p><strong>Nacimiento</strong><strong> </strong>(lugar): {{formulario.Nacimiento}}</p>
+        </td>
+        <td class="border border-dark" colspan="2" width="78">
+        <p><strong>Nacimiento:</strong></p>
+        </td>
+        <td class="border border-dark" colspan="4" width="91">
+        <p>Día: {{formulario.Fecha_Nacimiento.day}}</p>
+        </td>
+        <td class="border border-dark" colspan="3" width="91">
+        <p>Mes: {{formulario.Fecha_Nacimiento.month}}</p>
+        </td>
+        <td class="border border-dark" colspan="2" width="93">
+        <p>Año: {{formulario.Fecha_Nacimiento.year}}</p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="6" width="519">
+        <p><strong>Residencia</strong><strong> </strong><strong>habitual</strong><strong> </strong>(calle, carretera, finca, etc.): {{formulario.Residencia}}</p>
+        </td>
+        <td class="border border-dark" colspan="4" width="118">
+        <p><strong>No.</strong><strong> </strong><strong>o</strong><strong> </strong><strong>km: {{formulario.Direccion_No}}</strong></p>
+        </td>
+        <td class="border border-dark" colspan="4" width="117">
+        <p><strong>Edificio: {{formulario.Edificio}}</strong></p>
+        </td>
+        <td class="border border-dark" colspan="3" width="120">
+        <p><strong>Apartamento: {{formulario.Apartamento}}</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="6" width="519">
+        <p><strong>Entre</strong><strong> </strong><strong>calles,</strong><strong> </strong><strong>bloque,</strong><strong> </strong><strong>zona,</strong><strong> </strong><strong>reparto: {{formulario.Direccion}}</strong></p>
+        </td>
+        <td class="border border-dark" colspan="11" width="356">
+        <p><strong>Localidad</strong><strong>: {{formulario.Localidad}}</strong></p>
+        </td>
+        </tr>
+        <tr>
+        <td class="border border-dark" colspan="4" width="436">
+        <p><strong>Municipio: {{formulario.Municipio}}</strong></p>
+        </td>
+        <td class="border border-dark" colspan="13" width="439">
+        <p><strong>Provincia: {{formulario.Provincia}}</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="17" width="875">
+        <p><strong>Teléfono: {{formulario.Telefono}}</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="4" width="436">
+        <p><strong>Nombre</strong><strong> </strong><strong>del</strong><strong> </strong><strong>padre: {{formulario.Nombre_Padre}}</strong><strong> </strong>{{formulario.Estado_Padre}}</p>
+        </td>
+        <td class="border border-dark" colspan="13" width="439">
+        <p><strong>Nombre</strong><strong> </strong><strong>dela</strong><strong> </strong><strong>madre: {{formulario.Nombre_Madre}}</strong><strong> </strong>{{formulario.Estado_Madre}}</p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p><strong>Referido</strong><strong> </strong><strong>a especialista</strong><strong> </strong><strong>de: {{formulario.Referido_Especialista}}</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p><strong>Antecedentes</strong><strong> </strong><strong>de</strong><strong> </strong><strong>interés: {{formulario.Antecedentes}}</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p> </p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p> </p>
+        </td>
+        </tr>
+        <tr>
+        <td class="border border-dark" colspan="18" width="937">
+        <p><strong>Resumen Sindr</strong><strong>ómico</strong><strong>: {{formulario.Resumen_Sindromico}}</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p> </p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p> </p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p><strong>Resumen</strong><strong> </strong><strong>examen</strong><strong> </strong><strong>físico: {{formulario.Resumen_Fisico}}</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p> </p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p> </p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p> </p>
+        </td>
+        </tr>
+        <tr>
+        <td class="border border-dark" colspan="18" width="937">
+        <p> </p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p><strong>Tratamiento: {{formulario.Tratamiento}}</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p> </p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p> </p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p><strong>Evolución: {{formulario.Evolucion}}</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p> </p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p><strong>Impresión diagnóstica: {{formulario.Impresion_Diagnostica}}</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p> </p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p> </p>
+        </td>
+        </tr>
+        <tr>
+        <td class="border border-dark" colspan="18" width="937">
+        <p><strong>Otros </strong><strong>diagnósticos: {{formulario.Otros_Diagnosticos}}</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p> </p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p> </p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="18" width="937">
+        <p><em>Escriba</em><em> </em><em>aldorso las</em><em> </em><em>investigaciones</em><em> </em><em>de</em><em> </em><em>laboratorio</em><em> </em><em>y</em><em> </em><em>rayosX</em><em> </em><em>realizadas</em><em> </em><em>con</em><em> </em><em>resultado patológico. {{formulario.Investigaciones}}</em></p>
+        </td>
+        </tr>
+        <tr>
+        <td class="border border-dark" colspan="10" width="677">
+        <p><strong>Nombre</strong><strong> </strong><strong>del médico: {{formulario.Nombre_Medico}}</strong><strong> </strong>{{formulario.Firma}}</p>
+        </td>
+        <td class="border border-dark" colspan="8" width="260">
+        <p><strong>FECHA</strong></p>
+        </td>
+        </tr>
+        <tr class="border border-dark">
+        <td class="border border-dark" colspan="10" width="677">
+        <p> </p>
+        </td>
+        <td class="border border-dark" colspan="4" width="85">
+        <p>Día: {{formulario.Fecha.day}}</p>
+        </td>
+        <td class="border border-dark" colspan="3" width="85">
+        <p>Mes: {{formulario.Fecha.month}}</p>
+        </td>
+        <td class="border border-dark" width="89">
+        <p>Año: {{formulario.Fecha.year}}</p>
+        </td>
+        </tr>
+        </tbody>
+    </table>
+    <p> </p>
+</body>
+</html>
