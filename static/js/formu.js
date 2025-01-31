@@ -25,7 +25,14 @@ document.getElementById('formu').addEventListener('submit', function(event) {
                                         <h5 class="purple-text text-center">Se han registrado los datos correctamente <a href="http://127.0.0.1:8000/pdf/">Extraer PDF</a></h5>
                                     </div>
                                 </div>`})
-        .catch(error => {console.error('Error',error);
-        });
+        .catch(error => {
+        console.error('Error', error);
+        document.getElementById('messageError').innerHTML = `
+        <div class="row justify-content-center mt-4">
+            <div class="col-7 text-center">
+                <h5 class="red-text text-center">Ocurrió un error al registrar los datos: ${error.message}</h5>
+            </div>
+        </div>`;
+});
     });
     
