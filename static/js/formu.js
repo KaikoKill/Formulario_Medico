@@ -30,7 +30,7 @@ document.getElementById('formu').addEventListener('submit', function(event) {
         document.getElementById('messageError').innerHTML = `
         <div class="row justify-content-center mt-4">
             <div class="col-7 text-center">
-                <h5 class="red-text text-center">Ocurrió un error al registrar los datos: ${error.message}</h5>
+                <h5 style= "color: red; " class="red-text text-center">Ocurrió un error al registrar los datos: ${error.message}</h5>
             </div>
         </div>`;
 });
