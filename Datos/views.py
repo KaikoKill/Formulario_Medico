@@ -31,5 +31,4 @@ def pdf(request):
     # Verificar si hubo errores al crear el PDF
     if pisa_status.err:
         return HttpResponse('Error al generar el PDF')
-
     return response
