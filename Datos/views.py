@@ -10,10 +10,11 @@ from xhtml2pdf import pisa
 def index (request):
     return render(request, 'index.html')
 
-def pdf(request):
-    # Obtener el último formulario
-    formulario = RemisionCaso.objects.all().last()
-
+def pdf(request, id):
+    if id:
+        formulario = RemisionCaso.objects.get(id=id)
+    else:
+        formulario = RemisionCaso.objects.all().last() # Obtener el último formulario en caso de crearse nuevo
     # Crear el contexto para la plantilla
     context = {'formulario': formulario}
 
