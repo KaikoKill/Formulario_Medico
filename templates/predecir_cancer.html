@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-lg-6 fadeInLeft animated" data-animation="fadeInLeft" data-delay="1s" style="animation-delay: 1s;">
+    <div class="bg-secondary rounded p-5">
+        <h4 class="text-white mb-4">Ingrese los datos de los analisis del paciente </h4>
+        <!-- Formulario-->
+            <form method="post" action="{% url 'predict_cancer' %}"> 
+            {% csrf_token %}
+            <div class="col-12">
+                <span class="text-start text-white d-block mb-2">Espesor del grupo</span>
+                <div class="input-group">
+                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                        <span class="fas fa-map-marker-alt"></span>
+                    </div>
+                    <input class="form-control" type="number" name="espesor_grupo" placeholder="1 - 10" min="1" max="10">
+                </div>
+            </div>
+            <div class="col-12">
+                <span class="text-start text-white d-block mb-2">Uniformidad del tamaño de la celda</span>
+                <div class="input-group">
+                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                        <span class="fas fa-map-marker-alt"></span>
+                    </div>
+                    <input class="form-control" type="number" name="uniformidad_tamano_celda" placeholder="1 - 10" min="1" max="10">
+                </div>
+            </div>
+            <div class="col-12">
+                <span class="text-start text-white d-block mb-2">Uniformidad de la forma de la celda</span>
+                <div class="input-group">
+                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                        <span class="fas fa-map-marker-alt"></span>
+                    </div>
+                    <input class="form-control" type="number" name="uniformidad_forma_celda" placeholder="1 - 10" min="1" max="10">
+                </div>
+            </div>
+            <div class="col-12">
+                <span class="text-start text-white d-block mb-2">Adherencia marginal</span>
+                <div class="input-group">
+                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                        <span class="fas fa-map-marker-alt"></span>
+                    </div>
+                    <input class="form-control" type="number" name="adherencia_marginal" placeholder="1 - 10" min="1" max="10">
+                </div>
+            </div>
+            <div class="col-12">
+                <span class="text-start text-white d-block mb-2">Tamaño de célula epitelial única</span>
+                <div class="input-group">
+                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                        <span class="fas fa-map-marker-alt"></span>
+                    </div>
+                    <input class="form-control" type="number" name="tamano_celula_epitelial" placeholder="1 - 10" min="1" max="10">
+                </div>
+            </div>
+            <div class="col-12">
+                <span class="text-start text-white d-block mb-2">Núcleos desnudos</span>
+                <div class="input-group">
+                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                        <span class="fas fa-map-marker-alt"></span>
+                    </div>
+                    <input class="form-control" type="number" name="nucleos_desnudos" placeholder="1 - 10" min="1" max="10">
+                </div>
+            </div>
+            <div class="col-12">
+                <span class="text-start text-white d-block mb-2">Cromatina blanda</span>
+                <div class="input-group">
+                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                        <span class="fas fa-map-marker-alt"></span>
+                    </div>
+                    <input class="form-control" type="number" name="cromatina_blanda" placeholder="1 - 10" min="1" max="10">
+                </div>
+            </div>
+            <div class="col-12">
+                <span class="text-start text-white d-block mb-2">Nucleolos normales</span>
+                <div class="input-group">
+                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                        <span class="fas fa-map-marker-alt"></span>
+                    </div>
+                    <input class="form-control" type="number" name="nucleolos_normales" placeholder="1 - 10" min="1" max="10">
+                </div>
+            </div>
+            <div class="col-12">
+                <span class="text-start text-white d-block mb-2">Mitosis</span>
+                <div class="input-group">
+                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                        <span class="fas fa-map-marker-alt"></span>
+                    </div>
+                    <input class="form-control" type="number" name="mitosis" placeholder="1 - 10" min="1" max="10">
+                </div>
+            </div>
+            <div class="col-12 mt-4">
+                <input type="submit" class="btn btn-light w-100 py-2" value="Predecir">
+            </div>
+            {% if prediccion %}
+                <div class="col-12 mt-4 btn w-100 py-2" style="background-color: #f8d7da;">
+                    <h3>Resultado: {{ prediccion }}</h3>
+                    <h4>Efectividad: 97.1% <h4>
+                </div>
+            {% endif %}
+        </form>
+    </div>
+</div>
+</div>  
+</div>
+<!-- Formulario End -->
+{% endblock %}
