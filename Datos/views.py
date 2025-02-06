@@ -1,18 +1,24 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views import generic
 from .models import RemisionCaso
 from django.template.loader import get_template
 from xhtml2pdf import pisa
 import joblib
+import os
+from django.conf import settings
 
 # Create your views here.
+class list(generic.ListView):
+    model = RemisionCaso
+    paginate_by = 5
+    context_object_name = 'formularios'
 
-def index (request):
-    return render(request, 'index.html')
+def main(request):
+    return render(request, 'main.html')
 
-def list(request):
-    formularios = RemisionCaso.objects.all()
-    return render(request, 'list.html', {'formularios': formularios})
+def Agregar_Paciente (request):
+    return render(request, 'agg.html')
 
 def predecir_cancer(request):
     return render(request, 'predecir_cancer.html')
@@ -21,9 +27,19 @@ def pdf(request, id=None):
     if id:
         formulario = RemisionCaso.objects.all().get(id=id)
     else:
-        formulario = RemisionCaso.objects.all().last() # Obtener el último formulario en caso de crearse nuevo
+        formulario = RemisionCaso.objects.all().last()  # Obtener el último formulario en caso de crearse nuevo
+
+    # Convertir la URL de la imagen a una ruta absoluta del sistema de archivos
+    if formulario.firma_medico: 
+        imagen_path = os.path.join(settings.MEDIA_ROOT, formulario.firma_medico.name)
+    else:
+        imagen_path = None
+
     # Crear el contexto para la plantilla
-    context = {'formulario': formulario}
+    context = {
+        'formulario': formulario,
+        'imagen_path': imagen_path,  # Pasar la ruta absoluta de la imagen a la plantilla
+    }
 
     # Cargar la plantilla HTML
     template = get_template("template.html")

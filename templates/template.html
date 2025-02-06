@@ -41,7 +41,7 @@
         </tr>
         <tr>
         <td colspan="4">
-        <p><strong>Referido a: {{ formulario.referido_a }}</strong></p>
+        <p><strong>Referido a:</strong>{{ formulario.referido_a }}</p>
         </td>
         <td colspan="8">
         <p><strong>FECHA DE TURNO PROGRAMADO</strong></p>
@@ -68,32 +68,33 @@
         <tr>
         <td rowspan="8" style="width: 50px;">
         <p><strong>DATOS</strong></p>
-        <p><strong>GENERALES</strong></p>
+        <p><strong>GENE-</strong></p>
+        <p><strong>RALES</strong></p>
         </td>
         <td colspan="2">
-        <p><strong>1er Apellido: {{ formulario.primer_apellido }}</strong></p>
+        <p><strong>1er Apellido:</strong>{{ formulario.primer_apellido }}</p>
         </td>
         <td colspan="4">
-        <p><strong>2do Apellido: {{ formulario.segundo_apellido }}</strong></p>
+        <p><strong>2do Apellido:</strong>{{ formulario.segundo_apellido }}</p>
         </td>
         <td colspan="11">
-        <p><strong>Nombre(s): {{ formulario.nombre }}</strong></p>
+        <p><strong>Nombre(s):</strong>{{ formulario.nombre }}</p>
         </td>
         </tr>
         <tr>
         <td colspan="2">
-        <p><strong>Sexo: {{ formulario.sexo }}</strong></p>
+        <p><strong>Sexo:</strong> {{ formulario.sexo }}</p>
         </td>
         <td colspan="4">
-        <p><strong>Edad (años cumplidos): {{ formulario.edad }}</strong></p>
+        <p><strong>Edad (años cumplidos):</strong>{{ formulario.edad }}</p>
         </td>
         <td colspan="11">
-        <p><strong>Color de la piel: {{ formulario.color_piel }}</strong></p>
+        <p><strong>Color de la piel:</strong>{{ formulario.color_piel }}</p>
         </td>
         </tr>
         <tr>
         <td colspan="6">
-        <p><strong>Nacimiento (lugar): {{ formulario.nacimiento }}</strong></p>
+        <p><strong>Nacimiento (lugar):</strong>{{ formulario.nacimiento }}</p>
         </td>
         <td colspan="2">
         <p><strong>Nacimiento:</strong></p>
@@ -110,98 +111,96 @@
         </tr>
         <tr>
         <td colspan="6">
-        <p><strong>Residencia habitual (calle, carretera, finca, etc.): {{ formulario.residencia_habitual }}</strong></p>
+        <p><strong>Residencia habitual (calle, carretera, finca, etc.):</strong> {{ formulario.residencia_habitual }}</p>
         </td>
         <td colspan="4">
-        <p><strong>No. o km: {{ formulario.no_o_km }}</strong></p>
+        <p><strong>No. o km:</strong> {{ formulario.no_o_km }}</p>
         </td>
         <td colspan="4">
-        <p><strong>Edificio: {{ formulario.edificio }}</strong></p>
+        <p><strong>Edificio:</strong>{{ formulario.edificio }}</p>
         </td>
         <td colspan="3">
-        <p><strong>Apartamento: {{ formulario.apartamento }}</strong></p>
+        <p><strong>Apartamento: </strong>{{ formulario.apartamento }}</p>
         </td>
         </tr>
         <tr>
         <td colspan="6">
-        <p><strong>Entre calles, bloque, zona, reparto: {{ formulario.direccion_entre_calles }}</strong></p>
+        <p><strong>Entre calles, bloque, zona, reparto: </strong> {{ formulario.direccion_entre_calles }}</p>
         </td>
         <td colspan="11">
-        <p><strong>Localidad: {{ formulario.localidad }}</strong></p>
+        <p><strong>Localidad: </strong>{{ formulario.localidad }}</p>
         </td>
         </tr>
         <tr>
         <td colspan="4">
-        <p><strong>Municipio: {{ formulario.municipio }}</strong></p>
+        <p><strong>Municipio: </strong> {{ formulario.municipio }}</p>
         </td>
         <td colspan="13">
-        <p><strong>Provincia: {{ formulario.provincia }}</strong></p>
+        <p><strong>Provincia: </strong> {{ formulario.provincia }}</p>
         </td>
         </tr>
         <tr>
         <td colspan="17">
-        <p><strong>Teléfono: {{ formulario.telefono }}</strong></p>
+        <p><strong>Teléfono: </strong> {{ formulario.telefono }}</p>
         </td>
         </tr>
         <tr>
-        <td colspan="4">
-        <p><strong>Nombre del padre: {{ formulario.nombre_padre }} {{ formulario.estado_vital_padre }}</strong></p>
+        <td colspan="7">
+        <p><strong>Nombre del padre: </strong> {{ formulario.nombre_padre }}<br><strong>Estado Vital: </strong>  {{ formulario.estado_vital_padre }}</p>
         </td>
-        <td colspan="13">
-        <p><strong>Nombre de la madre: {{ formulario.nombre_madre }} {{ formulario.estado_vital_madre }}</strong></p>
-        </td>
-        </tr>
-        <tr>
-        <td colspan="18">
-        <p><strong>Referido a especialista de: {{ formulario.referido_a_especialista_de }}</strong></p>
+        <td colspan="10">
+        <p><strong>Nombre de la madre: </strong> {{ formulario.nombre_madre }}<br><strong>Estado Vital: </strong> {{ formulario.estado_vital_madre }}</p>
         </td>
         </tr>
         <tr>
         <td colspan="18">
-        <p><strong>Antecedentes de interés: {{ formulario.antecedentes_interes }}</strong></p>
+        <p><strong>Referido a especialista de: </strong>{{ formulario.referido_a_especialista_de }}</p>
         </td>
         </tr>
         <tr>
         <td colspan="18">
-        <p><strong>Resumen Sindrómico: {{ formulario.resumen_sindromico }}</strong></p>
+        <p><strong>Antecedentes de interés: </strong> {{ formulario.antecedentes_interes }}</p>
         </td>
         </tr>
         <tr>
         <td colspan="18">
-        <p><strong>Resumen examen físico: {{ formulario.resumen_examen_fisico }}</strong></p>
+        <p><strong>Resumen Sindrómico: </strong> {{ formulario.resumen_sindromico }}</p>
         </td>
         </tr>
         <tr>
         <td colspan="18">
-        <p><strong>Tratamiento: {{ formulario.tratamiento }}</strong></p>
+        <p><strong>Resumen examen físico: </strong> {{ formulario.resumen_examen_fisico }}</p>
         </td>
         </tr>
         <tr>
         <td colspan="18">
-        <p><strong>Evolución: {{ formulario.evolucion }}</strong></p>
+        <p><strong>Tratamiento: </strong> {{ formulario.tratamiento }}</p>
         </td>
         </tr>
         <tr>
         <td colspan="18">
-        <p><strong>Impresión diagnóstica: {{ formulario.impresion_diagnostica }}</strong></p>
+        <p><strong>Evolución: </strong> {{ formulario.evolucion }}</p>
         </td>
         </tr>
         <tr>
         <td colspan="18">
-        <p><strong>Otros diagnósticos: {{ formulario.otros_diagnosticos }}</strong></p>
+        <p><strong>Impresión diagnóstica: </strong> {{ formulario.impresion_diagnostica }}</p>
         </td>
         </tr>
         <tr>
         <td colspan="18">
-        <p><em>Escriba al dorso las investigaciones de laboratorio y rayos X realizadas con resultado patológico.</em></p>
+        <p><strong>Otros diagnósticos:</strong>  {{ formulario.otros_diagnosticos }}</p>
         </td>
+        </tr>
+        <tr>
         </tr>
         <tr>
         <td colspan="10">
-        <p><strong>Nombre del médico: {{ formulario.nombre_medico }}</strong></p>
-        {% if formulario.firma_medico %}
-            <img src="{{ formulario.firma_medico.url }}" alt="Firma del médico" style="max-width: 200px; height: auto;">
+        <p><strong>Nombre del médico:</strong> {{ formulario.nombre_medico }}                <strong>Firma: </strong>
+        {% if imagen_path %}
+            <img src="{{ imagen_path }}" alt="Firma del médico" style="width: 128px; height: 64px;">
         {% endif %}
+        </style=>
         </td>
         <td colspan="8">
         <p><strong>FECHA</strong></p>

@@ -14,7 +14,9 @@ document.getElementById('formu').addEventListener('submit', function(event) {
             }
             return response.json();
         })
-        .then(data => {document.getElementById('messageSuccess').innerHTML += `<div class="row justify-content-center">
+        .then(data => 
+            {   document.getElementById('messageError').innerHTML = '';
+                document.getElementById('messageSuccess').innerHTML += `<div class="row justify-content-center">
                                     <div class="col-3">
                                         <img src="${ruta}" height=100 width= 100 class="fit-image mt-4">
                                     </div>

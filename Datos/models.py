@@ -47,7 +47,7 @@ class RemisionCaso(models.Model):
     otros_diagnosticos = models.TextField(blank=True, null=True)
 
     nombre_medico = models.CharField(max_length=100)
-    firma_medico = models.FileField(upload_to='firma_medico/')
+    firma_medico = models.ImageField(null=True, blank=True, upload_to='firma_medico/')
     fecha = models.DateField()
     
     def __str__(self):
