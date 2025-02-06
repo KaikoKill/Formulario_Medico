@@ -1,5 +1,6 @@
 from datetime import timezone
 from django.db import models
+from django.forms import ValidationError
 
 # Create your models here.
 
@@ -50,5 +51,32 @@ class RemisionCaso(models.Model):
     firma_medico = models.ImageField(null=True, blank=True, upload_to='firma_medico/')
     fecha = models.DateField()
     
+   
+    def clean(self):
+        # Validación personalizada para la edad
+        if self.edad < 0 or self.edad > 120:
+            raise ValidationError(('Edad debe estar entre 0 y 120 años'))
+
+        # Validación personalizada para la fecha de nacimiento
+        if self.fecha_nacimiento > self.fecha_turno_programado:
+            raise ValidationError(('La fecha de nacimiento no puede ser posterior a la fecha del turno programado'))
+
+        # Validación personalizada para el nombre
+        if not self.nombre.isalpha():
+            raise ValidationError(('El nombre solo debe contener letras'))
+
+        # Validación personalizada para el primer apellido
+        if not self.primer_apellido.isalpha():
+            raise ValidationError(('El primer apellido solo debe contener letras'))
+
+        # Validación personalizada para el segundo apellido
+        if not self.segundo_apellido.isalpha():
+            raise ValidationError(('El segundo apellido solo debe contener letras'))
+
+    def save(self, *args, **kwargs):
+        # Llamar al método clean() para ejecutar las validaciones personalizadas
+        self.clean()
+        super(RemisionCaso, self).save(*args, **kwargs)
+
     def __str__(self):
-        return f"Remisión de {self.nombre} {self.primer_apellido}"
+        return f'{self.nombre} {self.primer_apellido} {self.segundo_apellido}'
