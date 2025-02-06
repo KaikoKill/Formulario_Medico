@@ -65,10 +65,15 @@ WSGI_APPLICATION = 'Cesim.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# settings.py
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'save',  # Nombre de tu base de datos
+        'USER': 'postgres',         # Usuario de PostgreSQL
+        'PASSWORD': '123',  # Contraseña de PostgreSQL
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
