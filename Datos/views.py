@@ -4,7 +4,7 @@ from django.views import generic
 from .models import RemisionCaso
 from django.template.loader import get_template
 from xhtml2pdf import pisa
-import joblib
+import joblib  # type: ignore
 import os
 from django.conf import settings
 
