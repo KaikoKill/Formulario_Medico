@@ -1,5 +1,4 @@
 set - o errexit
-
 # Build the project
 
 # Install dependencies
