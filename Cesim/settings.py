@@ -67,7 +67,7 @@ WSGI_APPLICATION = 'Cesim.wsgi.application'
 
 # settings.py
 DATABASES = "postgres://neondb_owner:npg_TWRqmMD6ofl9@ep-empty-thunder-a6vbrsrb-pooler.us-west-2.aws.neon.tech/neondb?sslmode=require"
-
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
