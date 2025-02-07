@@ -1,8 +1,12 @@
-#!/bin/bash
+
+echo "BUILD START"
 # Instalar dependencias
-pip install -r requirements.txt
+python3.9 -m pip install -r requirements.txt
 # Recopilar archivos estáticos
-python manage.py collectstatic --noinput
-# Migrar la base de datos (si es necesario)
+python3.9 manage.py collectstatic --noinput
+
+
 python manage.py makemigrations --noinput
 python manage.py migrate --noinput
+
+echo "BUILD END"
