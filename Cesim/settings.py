@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,14 +10,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-v7ol$svo-&lwa$svk#1lkza95htctwl%yc)dca^y##5=o62xw_'
+SECRET_KEY = os.environ.get('SECRET_KEY', default= 'django-insecure-v7ol$svo-&lwa$svk#1lkza95htctwl%yc)dca^y##5=o62xw_')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = []
 
-
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +42,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Cesim.urls'
@@ -67,14 +71,11 @@ WSGI_APPLICATION = 'Cesim.wsgi.application'
 
 # settings.py
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'save',  # Nombre de tu base de datos
-        'USER': 'postgres',         # Usuario de PostgreSQL
-        'PASSWORD': '123',  # Contraseña de PostgreSQL
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default = 'postgresql://postgres:123@localhost/postgres',
+        conn_max_age = 600
+    )
+
 }
 
 
@@ -113,9 +114,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+if not DEBUG:
+    STATIC_ROOT = os.environ.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = (
-    
+STATICFILES_DIRS = ( 
     os.path.join(BASE_DIR, 'static'),
 )
 
