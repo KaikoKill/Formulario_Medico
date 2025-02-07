@@ -13,7 +13,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', default= 'django-insecure-v7ol$svo-&lwa$svk#1lkza95htctwl%yc)dca^y##5=o62xw_')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+
 ALLOWED_HOSTS = ['127.0.0.1','.vercel.app', '.now.sh']
 
 # Application definition
@@ -65,13 +66,7 @@ WSGI_APPLICATION = 'Cesim.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 # settings.py
-DATABASES = {
-    'default': dj_database_url.config(
-        default = 'postgresql://postgres:123@localhost/postgres',
-        conn_max_age = 600
-    )
-
-}
+DATABASES = "postgres://neondb_owner:npg_TWRqmMD6ofl9@ep-empty-thunder-a6vbrsrb-pooler.us-west-2.aws.neon.tech/neondb?sslmode=require"
 
 
 # Password validation
@@ -108,9 +103,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 STATICFILES_DIRS = ( 
     os.path.join(BASE_DIR, 'static'),
