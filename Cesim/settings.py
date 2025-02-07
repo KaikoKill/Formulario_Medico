@@ -70,6 +70,7 @@ DATABASES = {
     'default': dj_database_url.config(
         default = 'postgresql://postgres:123@localhost/postgres',
         conn_max_age = 600
+        ssl_require=True
     )
 }
 
