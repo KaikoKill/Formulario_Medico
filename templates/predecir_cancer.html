@@ -92,8 +92,13 @@
             </div>
             {% if prediccion %}
                 <div class="col-12 mt-4 btn w-100 py-2" style="background-color: #f8d7da;">
-                    <h3>Resultado: {{ prediccion }}</h3>
-                    <h4>Efectividad: 97.1% <h4>
+                    <h4>Resultado: {{ prediccion }}</h4>
+                    <h3>Efectividad: 97.1% <h3>
+                </div>
+            {% endif %}
+            {% if error %}
+                <div class="col-12 mt-4 btn w-100 py-2" style="background-color: #f8d7da;">
+                    <h4>Error: {{ error }}</h4>
                 </div>
             {% endif %}
         </form>

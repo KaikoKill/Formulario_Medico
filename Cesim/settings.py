@@ -69,8 +69,8 @@ WSGI_APPLICATION = 'Cesim.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         default = 'postgresql://postgres:123@localhost/postgres',
-        conn_max_age = 600
-        ssl_require=True
+        conn_max_age = 600,
+        ssl_require= os.environ.get('SSL_REQUIRE', 'False') == 'True'
     )
 }
 
@@ -109,12 +109,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
-STATICFILES_DIRS = ( 
-    os.path.join(BASE_DIR, 'static'),
-)
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 MEDIA_URL = '/media/'
