@@ -1,7 +1,6 @@
 Django==3.2.16
 dj-database-url==2.0.0
 python-dotenv==1.0.0
-django-vercel==0.3.2
 psycopg2-binary==2.9.5
 whitenoise==6.4.0
 gunicorn==20.1.0
