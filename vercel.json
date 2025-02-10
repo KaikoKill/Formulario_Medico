@@ -24,7 +24,6 @@
       "dest": "manage.py"
     }
   ],
-  "ignore": ["venv", "venv1", "__pycache__", "node_modules"],
   "env": {
     "DJANGO_SETTINGS_MODULE": "Cesim.settings"
   }
