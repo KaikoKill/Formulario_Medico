@@ -1,14 +1,23 @@
 {
+  "version": 2,
   "builds": [
+    {
+      "src": "manage.py",
+      "use": "@vercel/python"
+    },
     {
       "src": "Cesim/wsgi.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "staticfiles/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "static/$1"
+      "dest": "/staticfiles/$1"
     },
     {
       "src": "/(.*)",

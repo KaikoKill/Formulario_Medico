@@ -67,11 +67,7 @@ WSGI_APPLICATION = 'Cesim.wsgi.application'
 
 # settings.py
 DATABASES = {
-    'default': dj_database_url.config(
-        default = 'postgresql://postgres:123@localhost/postgres',
-        conn_max_age = 600,
-        ssl_require= os.environ.get('SSL_REQUIRE', 'False') == 'True'
-    )
+    "default": dj_database_url.config(default=os.getenv("DATABASE_URL"))
 }
 
 # Password validation
