@@ -4,9 +4,8 @@
     <div class="bg-secondary rounded p-5">
         <h4 class="text-white mb-4">Ingrese los datos de los analisis del paciente </h4>
         <!-- Formulario-->
-            <form> 
-          {% comment "" %} <form method="post" action="{% url 'predict_cancer' %}"> 
-            {% csrf_token %}{% endcomment %} 
+            <form method="post" action="{% url 'predict_cancer' %}"> 
+            {% csrf_token %}
             <div class="col-12">
                 <span class="text-start text-white d-block mb-2">Espesor del grupo</span>
                 <div class="input-group">

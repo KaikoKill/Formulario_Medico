@@ -13,6 +13,6 @@ urlpatterns = [
     path('list/', views.list.as_view(template_name = 'list.html'), name='list'),
     path('pdf/<int:id>', views.pdf),
     path('pdf/', views.pdf),
-   # path('predecir_cancer/', views.predecir_cancer, name='predecir_cancer'),
-   # path('predict_cancer/', views.predict_cancer, name='predict_cancer'),
+    path('predecir_cancer/', views.predecir_cancer, name='predecir_cancer'),
+    path('predict_cancer/', views.predict_cancer, name='predict_cancer'),
 ]

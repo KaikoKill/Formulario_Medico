@@ -4,7 +4,7 @@ document.getElementById('formu').addEventListener('submit', function(event) {
     const formData = new FormData(this);
     const ruta = '/static/img/exito/Correcto.svg';
     
-    fetch('http://127.0.0.1:8000/api/Datos/',{
+    fetch('http://formulariomedico-production.up.railway.app/api/Datos/',{
         method: 'POST',
         body: formData,
         })

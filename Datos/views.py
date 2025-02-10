@@ -20,8 +20,8 @@ def main(request):
 def Agregar_Paciente (request):
     return render(request, 'agg.html')
 
-#def predecir_cancer(request):
-#    return render(request, 'predecir_cancer.html')
+def predecir_cancer(request):
+    return render(request, 'predecir_cancer.html')
 
 
 def pdf(request, id=None):
@@ -57,7 +57,7 @@ def pdf(request, id=None):
     if pisa_status.err:
         return HttpResponse('Error al generar el PDF')
     return response
-"""
+
 def predict_cancer(request):
     if request.method == 'POST':
         try:
@@ -101,5 +101,5 @@ def predict_cancer(request):
 
         except Exception as e:
             logger.error(f"Error al predecir el cáncer: {e}")
-            return render(request, 'predecir_cancer.html', {'error': 'Por motivos de sobrecarga, el modelo de aprendizaje automático no esta disponible.'})
-    return render(request, 'predecir_cancer.html')"""
+            return render(request, 'predecir_cancer.html', {'error': 'Por motivos de sobrecarga, el modelo de aprendizaje automático no esta disponible.'},status=500)
+    return render(request, 'predecir_cancer.html')
