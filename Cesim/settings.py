@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', default= 'django-insecure-v7ol$svo-&lwa$svk#1lkza95htctwl%yc)dca^y##5=o62xw_')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', default= 'True') == 'False'
 
 ALLOWED_HOSTS = ['formulariomedico-production.up.railway.app','localhost','127.0.0.1']
 
