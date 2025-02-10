@@ -7,6 +7,7 @@ from django.template.loader import get_template
 from xhtml2pdf import pisa
 import os
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 class list(generic.ListView):
@@ -57,7 +58,7 @@ def pdf(request, id=None):
     if pisa_status.err:
         return HttpResponse('Error al generar el PDF')
     return response
-
+@csrf_exempt
 def predict_cancer(request):
     if request.method == 'POST':
         try:
