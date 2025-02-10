@@ -25,7 +25,7 @@ document.getElementById('formu').addEventListener('submit', function(event) {
                                 <br><br>
                                 <div class="row justify-content-center mt-4">
                                     <div class="col-7 text-center">
-                                        <h5 class="purple-text text-center">Se han registrado los datos correctamente <a href="http://127.0.0.1:8000/pdf/">Extraer PDF</a></h5>
+                                        <h5 class="purple-text text-center">Se han registrado los datos correctamente <a href="https://formulariomedico-production.up.railway.app/pdf/">Extraer PDF</a></h5>
                                     </div>
                                 </div>`})
         .catch(error => {

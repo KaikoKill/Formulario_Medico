@@ -313,7 +313,7 @@ function deletePatient(pacienteid) {
                         <td>{{ paciente.sexo }}</td>
                         <td>{{ paciente.telefono }}</td>
                         <td>
-                            <a href="http://127.0.0.1:8000/pdf/{{paciente.id}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Ver Documento">&#xE254;</i></a>
+                            <a href="https://formulariomedico-production.up.railway.app/pdf/{{paciente.id}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Ver Documento">&#xE254;</i></a>
                             <a href="javascript:void(0);" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Eliminar Paciente" onclick="deletePatient({{ paciente.id }})">&#xE872;</i></a>
                         </td>
                     </tr>
