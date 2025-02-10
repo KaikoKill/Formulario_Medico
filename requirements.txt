@@ -7,7 +7,8 @@ djangorestframework==3.15.2
 gunicorn==23.0.0
 pilkit==3.0
 pillow==11.0.0
-psycopg2-binary==2.9.9
+psycopg2==2.9.10
+psycopg2-binary==2.9.10
 pycparser==2.22
 pypdf==5.2.0
 python-bidi==0.6.3
