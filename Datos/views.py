@@ -59,6 +59,7 @@ def pdf(request, id=None):
     return response
 
 def predict_cancer(request):
+
     if request.method == 'POST':
         try:
             # Obtener datos del formulario
@@ -101,6 +102,5 @@ def predict_cancer(request):
 
         except Exception as e:
             logger.error(f"Error al predecir el cáncer: {e}")
-            return render(request, 'predecir_cancer.html', {'error': 'Ocurrió un error al procesar la predicción. Por favor, inténtelo de nuevo.'})
-
+            return render(request, 'predecir_cancer.html', {'error': 'Por motivos de sobrecarga, el modelo de aprendizaje automático no esta disponible.'},status=500)
     return render(request, 'predecir_cancer.html')
