@@ -2,16 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "manage.py",
+      "src": "**/*",
       "use": "@vercel/python"
-    },
-    {
-      "src": "Cesim/wsgi.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "staticfiles_build/**/*",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -23,8 +15,6 @@
       "src": "/(.*)",
       "dest": "manage.py"
     }
-  ],
-  "env": {
-    "DJANGO_SETTINGS_MODULE": "Cesim.settings"
-  }
+  ]
 }
+
