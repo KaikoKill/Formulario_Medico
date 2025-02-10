@@ -15,7 +15,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default= 'django-insecure-v7ol$svo-&lw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['formulariomedico-production.up.railway.app','localhost']
 
 # Application definition
 
@@ -67,7 +67,7 @@ WSGI_APPLICATION = 'Cesim.wsgi.application'
 
 # settings.py
 DATABASES = {
-    "default": dj_database_url.config(default=os.getenv("DATABASE_URL"))
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
 # Password validation
