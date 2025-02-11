@@ -3,6 +3,7 @@ document.getElementById('formu').addEventListener('submit', function(event) {
 
     const formData = new FormData(this);
     const ruta = '/static/img/exito/Correcto.svg';
+    const pdfAloneUrl = "{% url 'pdfalone' %}";
     
     fetch('https://formulariomedico-production.up.railway.app/api/Datos/',{
         method: 'POST',
@@ -25,7 +26,7 @@ document.getElementById('formu').addEventListener('submit', function(event) {
                                 <br><br>
                                 <div class="row justify-content-center mt-4">
                                     <div class="col-7 text-center">
-                                        <h5 class="purple-text text-center">Se han registrado los datos correctamente <a href="{% url 'pdfalone' %}">Extraer PDF</a></h5>
+                                        <h5 class="purple-text text-center">Se han registrado los datos correctamente <a href="$(pdfAloneUrl)">Extraer PDF</a></h5>
                                     </div>
                                 </div>`})
         .catch(error => {

@@ -257,7 +257,7 @@ $(document).ready(function(){
 });
 function deletePatient(pacienteid) {
     if (confirm('¿Estás seguro de que deseas eliminar este paciente?')) {
-        fetch(`http://127.0.0.1:8000/api/Datos/${pacienteid}/`, {
+        fetch(`https://formulariomedico-production.up.railway.app/api/Datos/${pacienteid}/`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
