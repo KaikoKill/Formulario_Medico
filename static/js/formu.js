@@ -3,7 +3,7 @@ document.getElementById('formu').addEventListener('submit', function(event) {
 
     const formData = new FormData(this);
     const ruta = '/static/img/exito/Correcto.svg';
-    const pdfAloneUrl = "{% url 'pdfalone' %}";
+    const pdfAloneUrl = document.body.dataset.pdfaloneUrl;
     
     fetch('https://formulariomedico-production.up.railway.app/api/Datos/',{
         method: 'POST',
