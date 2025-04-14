@@ -2,6 +2,7 @@ from venv import logger
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import generic
+import joblib
 from .models import RemisionCaso
 from django.template.loader import get_template
 from xhtml2pdf import pisa
@@ -101,6 +102,6 @@ def predict_cancer(request):
 
         except Exception as e:
             logger.error(f"Error al predecir el cáncer: {e}")
-            return render(request, 'predecir_cancer.html', {'error': 'Por motivos de sobrecarga, el modelo de aprendizaje automático no esta disponible.'},status=500)
+            return render(request, 'predecir_cancer.html', {'error': 'Por motivos de sobrecarga, el modelo de aprendizaje automático no esta disponible.'}, status=500)
 
     return render(request, 'predecir_cancer.html')
